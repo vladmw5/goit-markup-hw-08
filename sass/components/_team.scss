@@ -1,0 +1,44 @@
+.team {
+  background-color: var(--button-bg-color);
+}
+
+.team__list {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.team__elem {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.person-card {
+  background-color: var(--header-white-color);
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.person-card__bottom {
+  padding: 30px 32px;
+}
+
+.person-card__name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.1875;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.person-card__job {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: var(--text-primary-color);
+  margin-bottom: 16px;
+}

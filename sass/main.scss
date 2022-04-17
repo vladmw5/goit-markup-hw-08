@@ -1,0 +1,20 @@
+@import "./utils/variables";
+@import "./base/reset";
+@import "./base/global";
+
+@import "./layout/header";
+
+@import "./components/hero";
+@import "./components/features";
+@import "./components/what-do-we-do";
+@import "./components/team";
+@import "./components/social";
+@import "./components/clients";
+@import "./components/backdrop";
+@import "./components/modal";
+@import "./components/main-form";
+@import "./components/portfolio";
+
+@import "./layout/footer/footer-address";
+@import "./layout/footer/footer-social";
+@import "./layout/footer/footer-join";

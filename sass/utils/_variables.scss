@@ -1,0 +1,16 @@
+//sass переменные не использую, потому что сразу надо было их использовать
+:root {
+  --header-white-color: #ffffff;
+  --header-primary-color: #212121;
+  --text-primary-color: #757575;
+  --button-bg-active-color: #2196f3;
+  --button-bg-color: #f5f4fa;
+  --footer-bg-color: #2f303a;
+  --logo-studio-color: #000000;
+  --footer-address-color: rgba(255, 255, 255, 0.6);
+  --secret-header-border-bottom-color: #ececec;
+  --border-portfolio-card: #eeeeee;
+  --icon-color: #afb1b8;
+  --default-transition-time: 250ms;
+  --default-transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

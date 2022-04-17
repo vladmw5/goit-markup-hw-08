@@ -1,0 +1,31 @@
+.clients__list {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.clients__elem {
+  flex-basis: calc(100% / 6 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.client-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+  border: 1px solid var(--icon-color);
+  height: 92px;
+  fill: var(--icon-color);
+
+  transition: fill var(--default-transition-time)
+    var(--default-transition-function);
+
+  &:hover,
+  &:focus {
+    fill: var(--button-bg-active-color);
+    border: 1px solid var(--button-bg-active-color);
+  }
+}

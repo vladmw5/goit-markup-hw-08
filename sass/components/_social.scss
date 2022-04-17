@@ -1,0 +1,49 @@
+.social {
+  display: flex;
+}
+
+//Используется без & так как нет просто селектора .social__elem
+//следовательно использование & только усложнило бы прочтение, на мой взгляд
+.social__elem:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social__link {
+  display: flex;
+  border-radius: 50%;
+
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social__link--icon-colored {
+  background-color: var(--header-white-color);
+  fill: var(--icon-color);
+
+  &:hover,
+  &:focus {
+    background-color: var(--button-bg-active-color);
+    fill: var(--header-white-color);
+  }
+}
+
+.social__link--transition {
+  transition: background-color var(--default-transition-time)
+      var(--default-transition-function),
+    fill var(--default-transition-time) var(--default-transition-function);
+}
+
+.social__link--footer-colored {
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &:hover,
+  &:focus {
+    background-color: var(--button-bg-active-color);
+  }
+}
+
+.social__icon--footer-colored {
+  fill: var(--header-white-color);
+}

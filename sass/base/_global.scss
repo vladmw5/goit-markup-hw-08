@@ -1,0 +1,46 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*К секции с кнопкой я не применил этот класс потому что там паддинги по 200пикс*/
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.section__header {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--header-white-color);
+  color: var(--header-primary-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.no-gap {
+  display: block;
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+.link {
+  text-decoration: none;
+}

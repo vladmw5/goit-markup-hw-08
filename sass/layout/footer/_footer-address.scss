@@ -1,0 +1,62 @@
+.footer {
+  background-color: var(--footer-bg-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer__container {
+  display: flex;
+}
+
+.footer__adress-mover {
+  margin-right: 70px;
+}
+
+.footer__logo {
+  color: var(--header-white-color);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.address__elem:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.address__mail,
+.address__teln {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7412;
+  color: var(--footer-address-color);
+  letter-spacing: 0.03em;
+  font-style: normal;
+
+  &:hover,
+  &:focus {
+    color: var(--button-bg-active-color);
+    fill: var(--button-bg-active-color);
+  }
+}
+
+.address__city {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+
+  color: var(--header-white-color);
+
+  &:hover,
+  &:focus {
+    color: var(--button-bg-active-color);
+    fill: var(--button-bg-active-color);
+  }
+}
+
+.address__link--transition {
+  transition: color var(--default-transition-time)
+      var(--default-transition-function),
+    fill var(--default-transition-time) var(--default-transition-function);
+}

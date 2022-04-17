@@ -1,0 +1,118 @@
+.top-panel {
+  padding-top: 24px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--secret-header-border-bottom-color); /*Почти невидимая линия*/
+}
+
+.top-panel__logo {
+  color: var(--logo-studio-color);
+  margin-right: 93px;
+
+  &:hover {
+    color: initial;
+  }
+}
+
+.logo__web {
+  color: var(--button-bg-active-color);
+}
+
+.top-panel__content {
+  display: flex;
+  align-items: center;
+}
+
+.top-panel__nav {
+  display: flex;
+  align-items: center;
+}
+
+.top-panel__list {
+  display: flex;
+}
+
+//Используется без & так как нет просто селектора .top-panel__element
+//следовательно использование & только усложнило бы прочтение, на мой взгляд
+.top-panel__element:not(:last-child) {
+  margin-right: 50px;
+}
+
+.top-panel__link {
+  color: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  transition: color var(--default-transition-time)
+    var(--default-transition-function);
+
+  &:hover,
+  &:focus {
+    color: var(--button-bg-active-color);
+    fill: var(--button-bg-active-color);
+  }
+}
+
+//contacts
+
+.contacts {
+  display: flex;
+}
+
+.top-panel__contacts {
+  margin-left: auto;
+}
+
+.contacts__link {
+  color: var(--text-primary-color);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  fill: var(--text-primary-color);
+
+  transition: color var(--default-transition-time)
+      var(--default-transition-function),
+    fill var(--default-transition-time) var(--default-transition-function);
+
+  &:hover,
+  &:focus {
+    color: var(--button-bg-active-color);
+    fill: var(--button-bg-active-color);
+  }
+}
+
+/*Я не сделал здесь :last-child, поскольку если в будущем элементов
+ контакта станет больше, чем два, то :last-child уже не прокатит*/
+//Используется без & так как нет просто селектора .contacts__elem
+//следовательно использование & только усложнило бы прочтение, на мой взгляд
+.contacts__elem:not(:first-child) {
+  margin-left: 50px;
+}
+
+.contacts__icon {
+  margin-right: 10px;
+}
+
+.curr-page {
+  position: relative;
+  color: var(--button-bg-active-color);
+  fill: var(--button-bg-active-color);
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -34px;
+
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+
+    background-color: var(--button-bg-active-color);
+    pointer-events: none;
+  }
+}
