@@ -2,11 +2,15 @@
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
   letter-spacing: 0.03em;
 
   margin-bottom: 12px;
+
+  @media screen and (min-width: $desktop) {
+    line-height: 1.15;
+  }
 }
 
 .main-form__field {
@@ -101,7 +105,6 @@
   align-items: center;
 
   max-height: 16px;
-  margin-right: 7px;
 
   fill: var(--header-primary-color);
 }
@@ -120,12 +123,17 @@
 
 .main-form__privacy-text {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.1667;
   letter-spacing: 0.03em;
   color: var(--text-primary-color);
 
   margin-left: 8px;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .main-form__link {

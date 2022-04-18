@@ -1,0 +1,5 @@
+@mixin media($min, $max: 100000px, $descriptor: screen) {
+  @media #{$descriptor} and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+} ;

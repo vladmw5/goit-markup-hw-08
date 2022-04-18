@@ -1,0 +1,62 @@
+.mobile-menu-button {
+  position: relative;
+
+  z-index: 1; //Чтоб было видно кнопку во время активного меню
+
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    fill: var(--button-bg-active-color);
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.icon-menu-open {
+  .mobile-menu-button.is-open & {
+    display: none;
+  }
+}
+
+.icon-menu-close {
+  display: none;
+
+  .mobile-menu-button.is-open & {
+    display: block;
+  }
+}
+
+.mobile-social {
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.mobile-social__elem {
+  &:not(:last-child) {
+    padding-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+
+  &:not(:first-child) {
+    padding-left: 10px;
+  }
+}
+
+.mobile-socila__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2222;
+  letter-spacing: 0.02em;
+  color: var(--button-bg-active-color);
+}

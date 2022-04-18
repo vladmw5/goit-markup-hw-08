@@ -1,12 +1,35 @@
 .top-panel {
-  padding-top: 24px;
-  padding-bottom: 26px;
   border-bottom: 1px solid var(--secret-header-border-bottom-color); /*Почти невидимая линия*/
+  height: 60px;
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: $tablet) {
+    height: 80px;
+  }
+}
+
+.top-panel__container {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.special-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 88px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 93px;
+  }
 }
 
 .top-panel__logo {
   color: var(--logo-studio-color);
-  margin-right: 93px;
 
   &:hover {
     color: initial;
@@ -18,32 +41,68 @@
 }
 
 .top-panel__content {
-  display: flex;
-  align-items: center;
+  @media screen and (max-width: $ptablet) {
+    display: none;
+    &.is-open {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // align-items: center;
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      width: 100vw;
+      height: 100vh;
+
+      padding-left: 40px;
+      padding-top: 48px;
+      padding-bottom: 48px;
+
+      background-color: var(--header-white-color);
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
 }
 
-.top-panel__nav {
-  display: flex;
-  align-items: center;
-}
+// .top-panel__nav {
+//   // display: flex;
+//   // align-items: center;
+// }
 
 .top-panel__list {
-  display: flex;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
 }
 
 //Используется без & так как нет просто селектора .top-panel__element
 //следовательно использование & только усложнило бы прочтение, на мой взгляд
-.top-panel__element:not(:last-child) {
-  margin-right: 50px;
+.top-panel__element {
+  @media screen and (max-width: $ptablet) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
 }
 
 .top-panel__link {
   color: inherit;
   font-family: inherit;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
+  font-size: 40px;
+  line-height: 1.175;
+  letter-spacing: 0.03em;
   transition: color var(--default-transition-time)
     var(--default-transition-function);
 
@@ -52,16 +111,56 @@
     color: var(--button-bg-active-color);
     fill: var(--button-bg-active-color);
   }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 1.1429;
+    letter-spacing: 0.02em;
+  }
 }
 
 //contacts
 
+.top-panel__wrapper {
+  @media screen and (min-width: $tablet) {
+    margin-left: auto;
+  }
+}
+
 .contacts {
   display: flex;
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+  }
 }
 
 .top-panel__contacts {
-  margin-left: auto;
+  @media screen and (max-width: $ptablet) {
+    margin-bottom: 64px;
+  }
+}
+
+.contacts__elem {
+  @media screen and (max-width: $ptablet) {
+    &:not(:first-child) {
+      margin-bottom: 32px;
+    }
+  }
+  @media screen and (min-width: $tablet) and (max-width: $pdesktop) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 }
 
 .contacts__link {
@@ -83,18 +182,50 @@
     color: var(--button-bg-active-color);
     fill: var(--button-bg-active-color);
   }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 1.1429;
+    letter-spacing: 0.02em;
+  }
+}
+
+.tel {
+  @media screen and (max-width: $ptablet) {
+    font-size: 34px;
+    line-height: 1.1765;
+    letter-spacing: 0.02em;
+    color: var(--button-bg-active-color);
+  }
+}
+
+.email {
+  @media screen and (max-width: $ptablet) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.1667;
+    letter-spacing: 0.02em;
+  }
 }
 
 /*Я не сделал здесь :last-child, поскольку если в будущем элементов
  контакта станет больше, чем два, то :last-child уже не прокатит*/
 //Используется без & так как нет просто селектора .contacts__elem
 //следовательно использование & только усложнило бы прочтение, на мой взгляд
-.contacts__elem:not(:first-child) {
-  margin-left: 50px;
-}
+// .contacts__elem:not(:first-child) {
+//   margin-left: 50px;
+// }
 
 .contacts__icon {
-  margin-right: 10px;
+  @media screen and (max-width: $ptablet) {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 8px;
+  }
+  //margin-right: 10px;
 }
 
 .curr-page {
@@ -102,17 +233,19 @@
   color: var(--button-bg-active-color);
   fill: var(--button-bg-active-color);
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -34px;
+  @media screen and (min-width: $tablet) {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -32px;
 
-    display: block;
-    height: 4px;
-    width: 100%;
-    border-radius: 2px;
+      display: block;
+      height: 4px;
+      width: 100%;
+      border-radius: 2px;
 
-    background-color: var(--button-bg-active-color);
-    pointer-events: none;
+      background-color: var(--button-bg-active-color);
+      pointer-events: none;
+    }
   }
 }
