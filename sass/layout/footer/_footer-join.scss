@@ -1,6 +1,31 @@
 .footer__join {
-  padding-top: 12px;
-  margin-left: 93px;
+  @media screen and (max-width: $pdesktop) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-grow: 2;
+    margin-top: 60px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 5px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 12px;
+    margin-left: 93px;
+  }
+}
+
+.join-form {
+  @media screen and (max-width: $pdesktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .join-form__email {
@@ -12,7 +37,6 @@
   border-radius: 4px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   padding: 15px 16px;
-  margin-right: 12px;
 
   &::placeholder {
     font-family: "Roboto";
@@ -22,6 +46,19 @@
     line-height: 1.25;
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  //На 320px нижняя форма будет норм отображаться
+  @media screen and (max-width: 388px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $pdesktop) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 12px;
   }
 }
 

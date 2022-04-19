@@ -1,4 +1,7 @@
 .about {
+  @media screen and (max-width: $pdesktop) {
+    display: none;
+  }
   padding-top: 0px;
 }
 

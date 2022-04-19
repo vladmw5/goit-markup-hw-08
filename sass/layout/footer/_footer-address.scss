@@ -6,10 +6,36 @@
 
 .footer__container {
   display: flex;
+  @media screen and (max-width: $ptablet) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (max-width: $pdesktop) {
+    flex-wrap: wrap;
+  }
 }
 
 .footer__adress-mover {
-  margin-right: 70px;
+  @media screen and (max-width: $ptablet) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (max-width: $pdesktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    flex-grow: 1;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 70px;
+  }
+}
+
+.address {
 }
 
 .footer__logo {
@@ -18,8 +44,16 @@
   margin-bottom: 20px;
 }
 
-.address__elem:not(:last-child) {
-  margin-bottom: 9px;
+.address__elem {
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
+
+  @media screen and (max-width: $pdesktop) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .address__mail,

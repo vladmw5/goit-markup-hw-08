@@ -1,11 +1,32 @@
 .portfolio__filters {
   display: flex;
   margin-bottom: 50px;
-  justify-content: center;
+
+  @media screen and (max-width: $ptablet) {
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+  }
 }
 
-.portfolio__filter:not(:last-child) {
-  margin-right: 8px;
+.portfolio__filter {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 389px) {
+    &:nth-child(3) {
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: $ptablet) {
+    &:nth-child(n + 4) {
+      margin-top: 10px;
+    }
+  }
 }
 
 .portfolio__filter-button {
@@ -37,16 +58,28 @@
 }
 
 .portfolio__cases {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 }
 
 .portfolio__case {
-  margin-left: 30px;
-  margin-top: 30px;
-  flex-basis: calc(100% / 3 - 30px);
+  @media screen and (max-width: $ptablet) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-left: 30px;
+    margin-top: 30px;
+    flex-basis: calc(100% / 2 - 30px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc(100% / 3 - 30px);
+  }
 }
 
 .case {
@@ -121,4 +154,8 @@
   .case:focus & {
     transform: translateY(-100%);
   }
+}
+
+.case__photo {
+  width: 100%;
 }

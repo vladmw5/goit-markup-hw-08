@@ -61,6 +61,7 @@
       padding-bottom: 48px;
 
       background-color: var(--header-white-color);
+      z-index: 1;
     }
   }
   @media screen and (min-width: $tablet) {

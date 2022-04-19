@@ -62,16 +62,30 @@ button {
 
 /*К секции с кнопкой я не применил этот класс потому что там паддинги по 200пикс*/
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .section__header {
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.2;
+  font-size: 28px;
+  line-height: 1.1786;
   text-align: center;
   margin-bottom: 50px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section__header {
+    font-size: 36px;
+    line-height: 1.2;
+  }
 }
 
 body {
@@ -87,6 +101,7 @@ body.modal-open {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .no-gap {
@@ -173,6 +188,7 @@ img {
     padding-top: 48px;
     padding-bottom: 48px;
     background-color: var(--header-white-color);
+    z-index: 1;
   }
 }
 
@@ -352,7 +368,7 @@ img {
 
 .mobile-menu-button {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: inline-flex;
   margin: 0;
   padding: 0;
@@ -466,9 +482,11 @@ img {
   border-radius: 4px;
 }
 
-.features__list {
-  display: flex;
-  justify-content: space-between;
+@media screen and (min-width: 768px) {
+  .features__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .features__thumb {
@@ -477,13 +495,25 @@ img {
   justify-content: center;
   align-items: center;
   height: 120px;
-  width: 270px;
   margin-bottom: 30px;
   border-radius: 4px;
 }
 
-.features__elem {
-  max-width: 270px;
+.features__elem:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .features__elem {
+    flex-basis: calc(100% / 2 - 30px);
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .features__elem {
+    flex-basis: calc(100% / 4 - 30px);
+  }
 }
 
 .features__fname {
@@ -492,6 +522,12 @@ img {
   font-size: 14px;
   line-height: 1.1429;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .features__fname {
+    text-align: center;
+  }
 }
 
 .features__descr {
@@ -504,6 +540,12 @@ img {
 
 .about {
   padding-top: 0px;
+}
+
+@media screen and (max-width: 1199px) {
+  .about {
+    display: none;
+  }
 }
 
 .about__list {
@@ -539,14 +581,32 @@ img {
 
 .team__list {
   display: flex;
+  flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
 }
 
 .team__elem {
-  flex-basis: calc(100% / 4 - 30px);
   margin-left: 30px;
   margin-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .team__elem:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team__elem {
+    flex-basis: calc(100% / 2 - 30px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team__elem {
+    flex-basis: calc(100% / 4 - 30px);
+  }
 }
 
 .person-card {
@@ -575,6 +635,15 @@ img {
   text-align: center;
   color: var(--text-primary-color);
   margin-bottom: 16px;
+}
+
+.person-card__photo {
+  width: 100%;
+}
+
+.team__social {
+  justify-content: center;
+  align-items: center;
 }
 
 .social {
@@ -622,14 +691,27 @@ img {
 
 .clients__list {
   display: flex;
+  flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
 }
 
 .clients__elem {
-  flex-basis: calc(100% / 6 - 30px);
+  flex-basis: calc(100% / 2 - 30px);
   margin-left: 30px;
   margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .clients__elem {
+    flex-basis: calc(100% / 3 - 30px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .clients__elem {
+    flex-basis: calc(100% / 6 - 30px);
+  }
 }
 
 .client-card {
@@ -898,11 +980,34 @@ img {
 .portfolio__filters {
   display: flex;
   margin-bottom: 50px;
-  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio__filters {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio__filters {
+    justify-content: center;
+  }
 }
 
 .portfolio__filter:not(:last-child) {
   margin-right: 8px;
+}
+
+@media screen and (max-width: 389px) {
+  .portfolio__filter:nth-child(3) {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio__filter:nth-child(n + 4) {
+    margin-top: 10px;
+  }
 }
 
 .portfolio__filter-button {
@@ -926,17 +1031,33 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.portfolio__cases {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+@media screen and (min-width: 768px) {
+  .portfolio__cases {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 }
 
-.portfolio__case {
-  margin-left: 30px;
-  margin-top: 30px;
-  flex-basis: calc(100% / 3 - 30px);
+@media screen and (max-width: 767px) {
+  .portfolio__case {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio__case {
+    margin-left: 30px;
+    margin-top: 30px;
+    flex-basis: calc(100% / 2 - 30px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio__case {
+    flex-basis: calc(100% / 3 - 30px);
+  }
 }
 
 .case {
@@ -1004,6 +1125,10 @@ img {
   transform: translateY(-100%);
 }
 
+.case__photo {
+  width: 100%;
+}
+
 .footer {
   background-color: var(--footer-bg-color);
   padding-top: 60px;
@@ -1014,8 +1139,40 @@ img {
   display: flex;
 }
 
-.footer__adress-mover {
-  margin-right: 70px;
+@media screen and (max-width: 767px) {
+  .footer__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .footer__container {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__adress-mover {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .footer__adress-mover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__adress-mover {
+    margin-right: 70px;
+  }
 }
 
 .footer__logo {
@@ -1026,6 +1183,14 @@ img {
 
 .address__elem:not(:last-child) {
   margin-bottom: 9px;
+}
+
+@media screen and (max-width: 1199px) {
+  .address__elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .address__mail,
@@ -1068,19 +1233,73 @@ img {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.1429;
   letter-spacing: 0.03em;
   color: var(--header-white-color);
   margin-bottom: 20px;
 }
 
-.footer__social {
-  padding-top: 12px;
+@media screen and (max-width: 1199px) {
+  .footer__header {
+    text-align: center;
+  }
 }
 
-.footer__join {
-  padding-top: 12px;
-  margin-left: 93px;
+@media screen and (max-width: 767px) {
+  .footer__social {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .footer__social {
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer__social {
+    padding-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__social {
+    padding-top: 12px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .footer__join {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+    margin-top: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer__join {
+    padding-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__join {
+    padding-top: 12px;
+    margin-left: 93px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .join-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .join-form__email {
@@ -1092,7 +1311,6 @@ img {
   border-radius: 4px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   padding: 15px 16px;
-  margin-right: 12px;
 }
 
 .join-form__email::placeholder {
@@ -1103,6 +1321,24 @@ img {
   line-height: 1.25;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 388px) {
+  .join-form__email {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .join-form__email {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .join-form__email {
+    margin-right: 12px;
+  }
 }
 
 .join-form__submit {
