@@ -2,6 +2,7 @@
   @media screen and (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
+    margin: -15px;
   }
 }
 
@@ -16,8 +17,10 @@
 }
 
 .features__elem {
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  @media screen and (max-width: $ptablet) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
   @media screen and (min-width: $tablet) {
     flex-basis: calc(100% / 2 - 30px);

@@ -33,11 +33,12 @@
   font-size: 28px;
   line-height: 1.1786;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
   @media screen and(min-width: $desktop) {
     font-size: 36px;
     line-height: 1.2;
+    margin-bottom: 50px;
   }
 }
 

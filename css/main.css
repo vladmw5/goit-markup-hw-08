@@ -78,13 +78,14 @@ button {
   font-size: 28px;
   line-height: 1.1786;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 @media screen and (min-width: 1200px) {
   .section__header {
     font-size: 36px;
     line-height: 1.2;
+    margin-bottom: 50px;
   }
 }
 
@@ -428,8 +429,8 @@ img {
 
 .with-button {
   background-color: var(--footer-bg-color);
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 118px;
+  padding-bottom: 118px;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -441,6 +442,13 @@ img {
 @media screen and (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .with-button {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .with-button {
+    padding-top: 200px;
+    padding-bottom: 200px;
   }
 }
 
@@ -486,6 +494,7 @@ img {
   .features__list {
     display: flex;
     flex-wrap: wrap;
+    margin: -15px;
   }
 }
 
@@ -499,8 +508,10 @@ img {
   border-radius: 4px;
 }
 
-.features__elem:not(:last-child) {
-  margin-bottom: 30px;
+@media screen and (max-width: 767px) {
+  .features__elem:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -979,7 +990,7 @@ img {
 
 .portfolio__filters {
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 767px) {
@@ -991,6 +1002,13 @@ img {
 @media screen and (min-width: 768px) {
   .portfolio__filters {
     justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio__filters {
+    margin-bottom: 50px;
   }
 }
 
@@ -1276,13 +1294,18 @@ img {
     align-items: center;
     justify-content: center;
     flex-grow: 2;
-    margin-top: 60px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .footer__join {
     padding-top: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer__join {
+    margin-top: 60px;
   }
 }
 
